@@ -14,6 +14,7 @@ int main() {
 	retangulo* ret = defineRetangulo(pontos, np);
 	cout << "Area do retangulo: " << calculaArea(ret);
 	delete[] pontos;
+	delete ret;
 	cin.ignore();
 	cin.get();
 	return 0;
