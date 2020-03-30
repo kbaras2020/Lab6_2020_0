@@ -1,6 +1,7 @@
 #pragma once
 #ifndef H_PONTO
 #define H_PONTO
+#include <iostream>
 
 using namespace std;
 

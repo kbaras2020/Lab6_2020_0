@@ -1,14 +1,16 @@
 #include "ponto.h"
 #include "retangulo.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
 int main() {
 	cout << "Quantos pontos?";
-	int np; 
+	int np;
 	cin >> np;
-	ponto * pontos = new ponto[np];
+	ponto* pontos = new ponto[np];
 	lePontos(pontos, np);
 	escrevePontos(pontos, np);
 	retangulo* ret = defineRetangulo(pontos, np);

@@ -24,3 +24,4 @@ int calculaArea(const retangulo* const pRec) {
 	return area;
 	//return (pRec->infDir.x - pRec->supEsq.x) * (pRec->supEsq.y - pRec->infDir.y);
 }
+

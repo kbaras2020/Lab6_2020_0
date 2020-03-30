@@ -1,7 +1,4 @@
 #include "Ponto.h"
-#include <iostream>
-
-using namespace std;
 
 void lePontos(ponto* const vPontos, int n) {
 	for (int i = 0; i < n; i++) {
@@ -18,3 +15,4 @@ void escrevePontos(const ponto* const vPontos, int n) {
 		cout << "(" << vPontos[i].x << "," << vPontos[i].y << ")" << endl;
 	}
 }
+
