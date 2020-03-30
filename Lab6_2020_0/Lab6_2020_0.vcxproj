@@ -146,6 +146,9 @@
     <ClInclude Include="ponto.h" />
     <ClInclude Include="retangulo.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="pontos.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
