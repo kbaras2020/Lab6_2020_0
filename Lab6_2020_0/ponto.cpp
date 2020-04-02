@@ -16,3 +16,19 @@ void escrevePontos(const ponto* const vPontos, int n) {
 	}
 }
 
+void lePontosFicheiro(ponto* const vPontos, int n, string fileName) {
+	fstream file;
+	file.open(fileName, ios::in);
+	int x, y;
+	int i = 0;
+	char c;
+	if (file.is_open()) {
+		while ((file >> c >> x >> c >> y >> c)) {
+			vPontos[i].x = x;
+			vPontos[i].y = y;
+			i++;
+		}
+		file.close();
+	}
+
+}

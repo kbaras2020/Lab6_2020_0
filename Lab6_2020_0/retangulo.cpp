@@ -25,3 +25,14 @@ int calculaArea(const retangulo* const pRec) {
 	//return (pRec->infDir.x - pRec->supEsq.x) * (pRec->supEsq.y - pRec->infDir.y);
 }
 
+void guardaRetangulo(const retangulo* const pRec, string fileName) {
+	fstream file;
+	file.open(fileName, ios::out);
+	if (file.is_open()) {
+		file << "(" << pRec->supEsq.x << "," << pRec->supEsq.y << ")" << endl
+			 << "(" << pRec->infDir.x << "," << pRec->infDir.y << ")" << endl
+			 << calculaArea(pRec) << endl;
+		file.close();
+	}
+	else cout << "Erro ao abrir o ficheiro" << endl;
+}
