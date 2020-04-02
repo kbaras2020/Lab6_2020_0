@@ -16,4 +16,7 @@ struct ponto {
 void lePontos(ponto* const vPontos, int n);
 void escrevePontos(const ponto* const vPontos, int n);
 void lePontosFicheiro(ponto* const vPontos, int n, string f);
+void guardaPontosBin(const ponto* const vPontos, int n, string fileName);
+void lePontosBin(ponto* const vPontos, int n, string fileName);
+
 #endif

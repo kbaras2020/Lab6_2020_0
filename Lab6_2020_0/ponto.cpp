@@ -32,3 +32,23 @@ void lePontosFicheiro(ponto* const vPontos, int n, string fileName) {
 	}
 
 }
+
+void guardaPontosBin(const ponto* const vPontos, int n, string fileName) {
+	fstream file;
+	file.open(fileName, ios::out | ios::binary);
+	if (file.is_open()) {
+		file.write((char*)vPontos, n * sizeof(ponto));
+		file.close();
+	}
+	else cout << "Erro ao abrir o ficheiro" << endl;
+}
+
+void lePontosBin(ponto* const vPontos, int n, string fileName) {
+	fstream file;
+	file.open(fileName, ios::in | ios::binary);
+	if (file.is_open()) {
+		file.read((char*)vPontos, n * sizeof(ponto));
+		file.close();
+	}
+	else cout << "Erro ao abrir o ficheiro" << endl;
+}

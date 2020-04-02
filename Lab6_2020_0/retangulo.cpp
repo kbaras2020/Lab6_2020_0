@@ -36,3 +36,27 @@ void guardaRetangulo(const retangulo* const pRec, string fileName) {
 	}
 	else cout << "Erro ao abrir o ficheiro" << endl;
 }
+
+void guardaRetanguloBin(const retangulo* const pRec, string fileName) {
+	fstream file;
+	file.open(fileName, ios::out | ios::binary);
+
+	if (file.is_open()) {
+		file.write((char*)pRec, sizeof(retangulo));
+		file.close();
+	}
+	else cout << "Erro ao abrir o ficheiro" << endl;
+}
+
+retangulo* leRetanguloBin(string fileName) {
+	fstream file;
+	file.open(fileName, ios::in | ios::binary);
+	if (file.is_open()) {
+		retangulo* novoRet = new retangulo;
+		file.read((char*)novoRet, sizeof(retangulo));
+		file.close();
+		return novoRet;
+	}
+	else cout << "Erro ao abrir o ficheiro." << endl;
+	return 0;
+}
