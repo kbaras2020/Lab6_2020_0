@@ -36,3 +36,24 @@ void guardaRetangulo(const retangulo* const pRec, string fileName) {
 	}
 	else cout << "Erro ao abrir o ficheiro" << endl;
 }
+
+retangulo* defineRetangulo(Nodo* lista) {
+	Nodo* aux = lista;
+	retangulo* rect = new retangulo;
+	rect->supEsq.x = aux->dados.x;
+	rect->supEsq.y = aux->dados.y;
+	rect->infDir.x = aux->dados.x;
+	rect->infDir.y = aux->dados.y;
+	while (aux != 0) {
+		if (aux->dados.x < rect->supEsq.x)
+			rect->supEsq.x = aux->dados.x;
+		if (aux->dados.y > rect->supEsq.y)
+			rect->supEsq.y = aux->dados.y;
+		if (aux->dados.x > rect->infDir.x)
+			rect->infDir.x = aux->dados.x;
+		if (aux->dados.y < rect->infDir.y)
+			rect->infDir.y = aux->dados.y;
+		aux = aux->seguinte;
+	}
+	return rect;
+}

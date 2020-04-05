@@ -24,12 +24,18 @@
     <ClCompile Include="retangulo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LLPontos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ponto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="retangulo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LLPontos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

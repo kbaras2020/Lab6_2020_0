@@ -138,11 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LLPontos.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ponto.cpp" />
     <ClCompile Include="retangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LLPontos.h" />
     <ClInclude Include="ponto.h" />
     <ClInclude Include="retangulo.h" />
   </ItemGroup>

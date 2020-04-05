@@ -32,3 +32,19 @@ void lePontosFicheiro(ponto* const vPontos, int n, string fileName) {
 	}
 
 }
+ponto* lePontoVetor(ponto* vPontos, int i) {
+	ponto* pto = new ponto;
+	pto->x = vPontos[i].x;
+	pto->y = vPontos[i].y;
+	return pto;
+}
+
+ponto* lePonto() {
+	ponto* pto = new (ponto);
+	cout << "x: ";
+	cin >> pto->x;
+	cout << "y: ";
+	cin >> pto->y;
+	cout << endl;
+	return pto;
+}

@@ -1,5 +1,6 @@
 #include "ponto.h"
 #include "retangulo.h"
+#include "LLPontos.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -17,7 +18,9 @@ Debug->NomeDoProjeto Properties->Configuration Properties->Debugging->Command Ar
 escrever os nomes dos ficheiros separados por um espaço pontos.txt retangulo.txt
 */
 
-int main(int argc, char* argv[]) { //argv[0] é sempre o nome do executável
+//lista ligada a partir do ficheiro caso seja passado no arg, caso contrário, inserçao de pontos manual
+int main(int argc, char* argv[]) { 
+	Nodo* listaPts = NULL;
 	if (argc == 3) {
 		int np = 0;
 		fstream file;
@@ -31,13 +34,35 @@ int main(int argc, char* argv[]) { //argv[0] é sempre o nome do executável
 		}
 		ponto* pontos = new ponto[np];
 		lePontosFicheiro(pontos, np, argv[1]);
-		escrevePontos(pontos, np);
+		//criar a lista a partir do vetor de pontos
+		for (int i = 0; i < np; i++) {
+			ponto* p = lePontoVetor(pontos, i);
+			insereFim(&listaPts, p);
+		}
+		mostra(listaPts);
 		retangulo* ret = defineRetangulo(pontos, np);
 		cout << "Area do retangulo: " << calculaArea(ret);
 		guardaRetangulo(ret, argv[2]);
 
 		delete[] pontos;
 		delete ret;
+	}
+	else if (argc == 1) {
+		char continuar = 's';
+		do {
+			ponto* ponto = lePonto();
+			insereFim(&listaPts, ponto);
+			mostra(listaPts);
+			cout << "Inserir + pontos? (s/n)" << endl;
+			cin >> continuar;
+		} while (continuar == 's');
+		mostra(listaPts);
+		retangulo* ret = defineRetangulo(listaPts);
+		cout << "Area do retangulo: " << calculaArea(ret) << endl;
+
+		removeInicio(&listaPts);
+		cout << "A remover do inicio..." << endl;
+		mostra(listaPts);
 	}
 	else {
 		cout << "Ficheiros de entrada e de saida nao fornecidos.";

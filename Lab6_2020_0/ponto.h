@@ -16,4 +16,7 @@ struct ponto {
 void lePontos(ponto* const vPontos, int n);
 void escrevePontos(const ponto* const vPontos, int n);
 void lePontosFicheiro(ponto* const vPontos, int n, string f);
+
+ponto* lePontoVetor(ponto* vPontos, int i);
+ponto* lePonto();
 #endif
